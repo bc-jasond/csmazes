@@ -1,6 +1,7 @@
-{print} = require 'util'
 {spawn} = require 'child_process'
 fs      = require 'fs'
+
+print = (msg) -> process.stdout.write(msg)
 
 task 'build', 'Build lib/ from src/', ->
   coffee = spawn 'coffee', ['-c', '--bare', '-o', 'lib', 'src']
